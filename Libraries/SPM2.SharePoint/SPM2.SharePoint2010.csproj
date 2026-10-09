@@ -65,41 +65,21 @@
        loaded from the GAC, not from private copies. It also keeps the output folder
        free of SSOM DLLs, which matters because AutoLoadAssemblies LoadFile()s and
        reflects over every assembly sitting next to the exe. -->
-  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug SE|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release SE|AnyCPU'">
+  <ItemGroup>
     <Reference Include="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\SP2010\Microsoft.SharePoint.dll</HintPath>
       <Private>False</Private>
-      <HintPath>..\..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\SP2010\Microsoft.SharePoint.Client.ServerRuntime.dll</HintPath>
       <Private>False</Private>
-      <HintPath>..\..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.ServerRuntime.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SharePoint.Search, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\SP2010\Microsoft.SharePoint.Search.dll</HintPath>
       <Private>False</Private>
-      <HintPath>..\..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Search.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug 2013|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release 2013|AnyCPU'">
-    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.ServerRuntime.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Search.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Autofac, Version=2.6.3.862, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Autofac-2.6.3.862-NET35\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" Condition="'$(Configuration)|$(Platform)' == 'Debug 2013|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release 2013|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Debug SE|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release SE|AnyCPU'" />

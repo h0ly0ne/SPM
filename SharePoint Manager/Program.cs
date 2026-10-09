@@ -93,9 +93,22 @@ namespace Keutmann.SharePointManager
             // Find all the assemblies for this application
             builder.RegisterModule(new AutoLoadAssemblies());
 
-            // Build the container now!
-            autoFacContainer = builder.Build();
-            //CompositionProvider.LoadAssemblies();
+            try
+            {
+                // Build the container now!
+                autoFacContainer = builder.Build();
+                //CompositionProvider.LoadAssemblies();
+            }
+            catch (System.Reflection.ReflectionTypeLoadException ex)
+            {
+                foreach (var loaderEx in ex.LoaderExceptions)
+                {
+                    // Hier sehen Sie im Debugger genau, welche DLL fehlt (z.B. FileNotFoundException)
+                    System.Diagnostics.Debug.WriteLine(loaderEx?.Message);
+                }
+
+                /*throw*/;
+            }
 
             IoCContainer = autoFacContainer.Resolve<IContainerAdapter>();
 

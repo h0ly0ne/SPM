@@ -12,7 +12,6 @@ namespace SPM2.Framework
             if (ex is AppDomainUnloadedException) return true;
             if (ex is BadImageFormatException) return true;
             if (ex is CannotUnloadAppDomainException) return true;
-            if (ex is ExecutionEngineException) return true;
             if (ex is InvalidProgramException) return true;
             if (ex is ThreadAbortException) return true;
             return false;

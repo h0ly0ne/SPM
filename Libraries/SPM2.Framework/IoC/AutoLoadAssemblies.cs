@@ -20,7 +20,6 @@ namespace SPM2.Framework.IoC
             Assemblies = FindAssemblies("addin");
         }
 
-
         public AutoLoadAssemblies(IEnumerable<Assembly> assemblies)
         {
             Assemblies = assemblies;
@@ -73,17 +72,18 @@ namespace SPM2.Framework.IoC
             var dir = new DirectoryInfo(assmPath);
 
             foreach (var item in dir.GetFiles("*.dll"))
-	        {
+            {
                 if (IsExcluded(item))
                     continue;
 
                 TryLoad(list, item);
-	        }
+            }
 
             foreach (var item in dir.GetFiles("*.exe"))
-	        {
+            {
                 TryLoad(list, item);
-	        }
+            }
+
             //dir.GetFiles(
             //executionAssembly.CodeBase
 
